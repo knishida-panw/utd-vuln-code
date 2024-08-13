@@ -4,7 +4,9 @@ resource "azurerm_virtual_network" "example" {
   location            = azurerm_resource_group.example.location
   resource_group_name = azurerm_resource_group.example.name
   tags = {
-    git_file             = "terraform/azure/networking.tf"
+    git_file = "terraform/azure/networking.tf"
+    git_org  = "knishida-panw"
+    git_repo = "utd-vuln-code"
   }
 }
 
@@ -26,7 +28,9 @@ resource "azurerm_network_interface" "ni_linux" {
     private_ip_address_allocation = "Dynamic"
   }
   tags = {
-    git_file             = "terraform/azure/networking.tf"
+    git_file = "terraform/azure/networking.tf"
+    git_org  = "knishida-panw"
+    git_repo = "utd-vuln-code"
   }
 }
 
@@ -41,7 +45,9 @@ resource "azurerm_network_interface" "ni_win" {
     private_ip_address_allocation = "Dynamic"
   }
   tags = {
-    git_file             = "terraform/azure/networking.tf"
+    git_file = "terraform/azure/networking.tf"
+    git_org  = "knishida-panw"
+    git_repo = "utd-vuln-code"
   }
 }
 
@@ -74,7 +80,9 @@ resource azurerm_network_security_group "bad_sg" {
     destination_address_prefix = "*"
   }
   tags = {
-    git_file             = "terraform/azure/networking.tf"
+    git_file = "terraform/azure/networking.tf"
+    git_org  = "knishida-panw"
+    git_repo = "utd-vuln-code"
   }
 }
 
@@ -83,7 +91,9 @@ resource azurerm_network_watcher "network_watcher" {
   name                = "tg-network-watcher-${var.environment}"
   resource_group_name = azurerm_resource_group.example.name
   tags = {
-    git_file             = "terraform/azure/networking.tf"
+    git_file = "terraform/azure/networking.tf"
+    git_org  = "knishida-panw"
+    git_repo = "utd-vuln-code"
   }
 }
 
@@ -96,5 +106,9 @@ resource azurerm_network_watcher_flow_log "flow_log" {
   retention_policy {
     enabled = false
     days    = 10
+  }
+  tags = {
+    git_org  = "knishida-panw"
+    git_repo = "utd-vuln-code"
   }
 }

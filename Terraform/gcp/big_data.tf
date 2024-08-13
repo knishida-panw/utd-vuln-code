@@ -26,6 +26,8 @@ resource google_bigquery_dataset "dataset" {
     role          = "READER"
   }
   labels = {
-    git_file             = "terraform/gcp/big_data.tf"
+    git_file = "terraform/gcp/big_data.tf"
+    git_org  = "knishida-panw"
+    git_repo = "utd-vuln-code"
   }
 }

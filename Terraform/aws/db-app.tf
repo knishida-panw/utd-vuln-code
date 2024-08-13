@@ -21,9 +21,11 @@ resource "aws_db_instance" "default" {
   publicly_accessible     = true
 
   tags = {
-    Name                 = "${local.resource_prefix.value}-rds"
-    Environment          = local.resource_prefix.value
-    git_file             = "terraform/aws/db-app.tf"
+    Name        = "${local.resource_prefix.value}-rds"
+    Environment = local.resource_prefix.value
+    git_file    = "terraform/aws/db-app.tf"
+    git_org     = "knishida-panw"
+    git_repo    = "utd-vuln-code"
   }
 
   # Ignore password changes from tf plan diff
@@ -39,9 +41,11 @@ resource "aws_db_option_group" "default" {
   option_group_description = "Terraform OG"
 
   tags = {
-    Name                 = "${local.resource_prefix.value}-og"
-    Environment          = local.resource_prefix.value
-    git_file             = "terraform/aws/db-app.tf"
+    Name        = "${local.resource_prefix.value}-og"
+    Environment = local.resource_prefix.value
+    git_file    = "terraform/aws/db-app.tf"
+    git_org     = "knishida-panw"
+    git_repo    = "utd-vuln-code"
   }
 }
 
@@ -63,9 +67,11 @@ resource "aws_db_parameter_group" "default" {
   }
 
   tags = {
-    Name                 = "${local.resource_prefix.value}-pg"
-    Environment          = local.resource_prefix.value
-    git_file             = "terraform/aws/db-app.tf"
+    Name        = "${local.resource_prefix.value}-pg"
+    Environment = local.resource_prefix.value
+    git_file    = "terraform/aws/db-app.tf"
+    git_org     = "knishida-panw"
+    git_repo    = "utd-vuln-code"
   }
 }
 
@@ -75,9 +81,11 @@ resource "aws_db_subnet_group" "default" {
   description = "Terraform DB Subnet Group"
 
   tags = {
-    Name                 = "sg-${local.resource_prefix.value}"
-    Environment          = local.resource_prefix.value
-    git_file             = "terraform/aws/db-app.tf"
+    Name        = "sg-${local.resource_prefix.value}"
+    Environment = local.resource_prefix.value
+    git_file    = "terraform/aws/db-app.tf"
+    git_org     = "knishida-panw"
+    git_repo    = "utd-vuln-code"
   }
 }
 
@@ -86,9 +94,11 @@ resource "aws_security_group" "default" {
   vpc_id = aws_vpc.web_vpc.id
 
   tags = {
-    Name                 = "${local.resource_prefix.value}-rds-sg"
-    Environment          = local.resource_prefix.value
-    git_file             = "terraform/aws/db-app.tf"
+    Name        = "${local.resource_prefix.value}-rds-sg"
+    Environment = local.resource_prefix.value
+    git_file    = "terraform/aws/db-app.tf"
+    git_org     = "knishida-panw"
+    git_repo    = "utd-vuln-code"
   }
 }
 
@@ -116,7 +126,9 @@ resource "aws_iam_instance_profile" "ec2profile" {
   name = "${local.resource_prefix.value}-profile"
   role = "${aws_iam_role.ec2role.name}"
   tags = {
-    git_file             = "terraform/aws/db-app.tf"
+    git_file = "terraform/aws/db-app.tf"
+    git_org  = "knishida-panw"
+    git_repo = "utd-vuln-code"
   }
 }
 
@@ -141,9 +153,11 @@ resource "aws_iam_role" "ec2role" {
 EOF
 
   tags = {
-    Name                 = "${local.resource_prefix.value}-role"
-    Environment          = local.resource_prefix.value
-    git_file             = "terraform/aws/db-app.tf"
+    Name        = "${local.resource_prefix.value}-role"
+    Environment = local.resource_prefix.value
+    git_file    = "terraform/aws/db-app.tf"
+    git_org     = "knishida-panw"
+    git_repo    = "utd-vuln-code"
   }
 }
 
@@ -343,8 +357,10 @@ sudo chown root:root /var/www/html/index.php
 
 EOF
   tags = {
-    Name                 = "${local.resource_prefix.value}-dbapp"
-    git_file             = "terraform/aws/db-app.tf"
+    Name     = "${local.resource_prefix.value}-dbapp"
+    git_file = "terraform/aws/db-app.tf"
+    git_org  = "knishida-panw"
+    git_repo = "utd-vuln-code"
   }
 }
 

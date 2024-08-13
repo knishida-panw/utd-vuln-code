@@ -8,7 +8,9 @@ resource azurerm_app_service_plan "example" {
     size = "S1"
   }
   tags = {
-    git_file             = "terraform/azure/app_service.tf"
+    git_file = "terraform/azure/app_service.tf"
+    git_org  = "knishida-panw"
+    git_repo = "utd-vuln-code"
   }
 }
 
@@ -22,7 +24,9 @@ resource azurerm_app_service "app-service1" {
     min_tls_version = "1.1"
   }
   tags = {
-    git_file             = "terraform/azure/app_service.tf"
+    git_file = "terraform/azure/app_service.tf"
+    git_org  = "knishida-panw"
+    git_repo = "utd-vuln-code"
   }
 }
 
@@ -37,7 +41,9 @@ resource azurerm_app_service "app-service2" {
     enabled = false
   }
   tags = {
-    git_file             = "terraform/azure/app_service.tf"
+    git_file = "terraform/azure/app_service.tf"
+    git_org  = "knishida-panw"
+    git_repo = "utd-vuln-code"
   }
 }
 

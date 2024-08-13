@@ -9,7 +9,9 @@ resource "azurerm_managed_disk" "example" {
     enabled = false
   }
   tags = {
-    git_file             = "terraform/azure/storage.tf"
+    git_file = "terraform/azure/storage.tf"
+    git_org  = "knishida-panw"
+    git_repo = "utd-vuln-code"
   }
 }
 
@@ -41,7 +43,9 @@ resource "azurerm_storage_account" "example" {
     }
   }
   tags = {
-    git_file             = "terraform/azure/storage.tf"
+    git_file = "terraform/azure/storage.tf"
+    git_org  = "knishida-panw"
+    git_repo = "utd-vuln-code"
   }
 }
 
@@ -73,7 +77,9 @@ resource "azurerm_storage_account" "data" {
     }
   }
   tags = {
-    git_file             = "terraform/azure/storage.tf"
+    git_file = "terraform/azure/storage.tf"
+    git_org  = "knishida-panw"
+    git_repo = "utd-vuln-code"
   }
 }
 

@@ -15,7 +15,9 @@ resource "aws_elasticsearch_domain" "monitoring-framework" {
     volume_size = 30
   }
   tags = {
-    git_file             = "terraform/aws/es.tf"
+    git_file = "terraform/aws/es.tf"
+    git_org  = "knishida-panw"
+    git_repo = "utd-vuln-code"
   }
 }
 

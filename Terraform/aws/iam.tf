@@ -3,9 +3,11 @@ resource "aws_iam_user" "user" {
   force_destroy = true
 
   tags = {
-    Name                 = "${local.resource_prefix.value}-user"
-    Environment          = local.resource_prefix.value
-    git_file             = "terraform/aws/iam.tf"
+    Name        = "${local.resource_prefix.value}-user"
+    Environment = local.resource_prefix.value
+    git_file    = "terraform/aws/iam.tf"
+    git_org     = "knishida-panw"
+    git_repo    = "utd-vuln-code"
   }
 
 }
