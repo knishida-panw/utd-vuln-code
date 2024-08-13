@@ -23,6 +23,8 @@ resource azurerm_kubernetes_cluster "k8s_cluster" {
     enabled = false
   }
   tags = {
-    git_file             = "terraform/azure/aks.tf"
+    git_file = "terraform/azure/aks.tf"
+    git_org  = "knishida-panw"
+    git_repo = "utd-vuln-code"
   }
 }

@@ -2,7 +2,9 @@ resource "google_storage_bucket" "tg_website" {
   name          = "terragot-${var.environment}"
   force_destroy = true
   labels = {
-    git_file             = "terraform/gcp/gcs.tf"
+    git_file = "terraform/gcp/gcs.tf"
+    git_org  = "knishida-panw"
+    git_repo = "utd-vuln-code"
   }
 }
 
@@ -16,6 +18,8 @@ resource "google_storage_bucket" "internal_storage" {
   name          = "tg-internal"
   force_destroy = true
   labels = {
-    git_file             = "terraform/gcp/gcs.tf"
+    git_file = "terraform/gcp/gcs.tf"
+    git_org  = "knishida-panw"
+    git_repo = "utd-vuln-code"
   }
 }

@@ -4,7 +4,9 @@ resource "aws_kms_key" "logs_key" {
 
   deletion_window_in_days = 7
   tags = {
-    git_file             = "terraform/aws/kms.tf"
+    git_file = "terraform/aws/kms.tf"
+    git_org  = "knishida-panw"
+    git_repo = "utd-vuln-code"
   }
 }
 
@@ -21,7 +23,9 @@ resource "aws_kms_key" "customer_key" {
 
   deletion_window_in_days = 7
   tags = {
-    git_file             = "terraform/aws/kms.tf"
+    git_file = "terraform/aws/kms.tf"
+    git_org  = "knishida-panw"
+    git_repo = "utd-vuln-code"
   }
 }
 

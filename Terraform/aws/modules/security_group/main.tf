@@ -21,7 +21,9 @@ resource "aws_security_group" "sg" {
   }
 
   tags = {
-    Name                 = "allow_ssh"
-    git_file             = "terraform/aws/modules/security_group/main.tf"
+    Name     = "allow_ssh"
+    git_file = "terraform/aws/modules/security_group/main.tf"
+    git_org  = "knishida-panw"
+    git_repo = "utd-vuln-code"
   }
 }

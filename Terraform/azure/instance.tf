@@ -28,8 +28,10 @@ resource azurerm_linux_virtual_machine "linux_machine" {
   }
 
   tags = {
-    environment          = var.environment
-    git_file             = "terraform/azure/instance.tf"
+    environment = var.environment
+    git_file    = "terraform/azure/instance.tf"
+    git_org     = "knishida-panw"
+    git_repo    = "utd-vuln-code"
   }
 }
 
@@ -54,7 +56,9 @@ resource azurerm_windows_virtual_machine "windows_machine" {
   }
 
   tags = {
-    environment          = var.environment
-    git_file             = "terraform/azure/instance.tf"
+    environment = var.environment
+    git_file    = "terraform/azure/instance.tf"
+    git_org     = "knishida-panw"
+    git_repo    = "utd-vuln-code"
   }
 }

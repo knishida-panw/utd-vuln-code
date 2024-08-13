@@ -16,8 +16,10 @@ resource "azurerm_key_vault" "example" {
     ]
   }
   tags = {
-    environment          = var.environment
-    git_file             = "terraform/azure/key_vault.tf"
+    environment = var.environment
+    git_file    = "terraform/azure/key_vault.tf"
+    git_org     = "knishida-panw"
+    git_repo    = "utd-vuln-code"
   }
 }
 
@@ -35,7 +37,9 @@ resource "azurerm_key_vault_key" "generated" {
     "wrapKey",
   ]
   tags = {
-    git_file             = "terraform/azure/key_vault.tf"
+    git_file = "terraform/azure/key_vault.tf"
+    git_org  = "knishida-panw"
+    git_repo = "utd-vuln-code"
   }
 }
 
@@ -44,6 +48,8 @@ resource "azurerm_key_vault_secret" "secret" {
   name         = "tg-secret-${var.environment}"
   value        = random_string.password.result
   tags = {
-    git_file             = "terraform/azure/key_vault.tf"
+    git_file = "terraform/azure/key_vault.tf"
+    git_org  = "knishida-panw"
+    git_repo = "utd-vuln-code"
   }
 }

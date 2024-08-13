@@ -14,8 +14,10 @@ resource "azurerm_sql_server" "example" {
   administrator_login          = "ariel"
   administrator_login_password = "Aa12345678"
   tags = {
-    environment          = var.environment
-    git_file             = "terraform/azure/sql.tf"
+    environment = var.environment
+    git_file    = "terraform/azure/sql.tf"
+    git_org     = "knishida-panw"
+    git_repo    = "utd-vuln-code"
   }
 }
 
@@ -50,7 +52,9 @@ resource "azurerm_mysql_server" "example" {
   public_network_access_enabled     = true
   ssl_enforcement_enabled           = false
   tags = {
-    git_file             = "terraform/azure/sql.tf"
+    git_file = "terraform/azure/sql.tf"
+    git_org  = "knishida-panw"
+    git_repo = "utd-vuln-code"
   }
 }
 
@@ -68,7 +72,9 @@ resource "azurerm_postgresql_server" "example" {
   version                      = "9.5"
   ssl_enforcement_enabled      = false
   tags = {
-    git_file             = "terraform/azure/sql.tf"
+    git_file = "terraform/azure/sql.tf"
+    git_org  = "knishida-panw"
+    git_repo = "utd-vuln-code"
   }
 }
 
